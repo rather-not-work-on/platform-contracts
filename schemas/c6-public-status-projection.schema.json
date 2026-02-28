@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "c6-public-status-projection",
+  "title": "C6 Public Status Projection",
+  "type": "object",
+  "required": [
+    "run_id",
+    "project_item_id",
+    "public_state",
+    "projected_at_utc"
+  ],
+  "properties": {
+    "run_id": {"type": "string"},
+    "project_item_id": {"type": "string"},
+    "public_state": {"type": "string", "enum": ["running", "terminal"]},
+    "terminal_reason": {"type": "string", "enum": ["succeeded", "failed", "canceled", "inconclusive"]},
+    "projected_at_utc": {"type": "string"}
+  },
+  "additionalProperties": true
+}

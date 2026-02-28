@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "c8-plan-to-github-projection",
+  "title": "C8 Plan to GitHub Projection",
+  "type": "object",
+  "required": [
+    "initiative_id",
+    "plan_doc_id",
+    "plan_item_id",
+    "target_repo",
+    "sync_key",
+    "projection_status"
+  ],
+  "properties": {
+    "initiative_id": {"type": "string"},
+    "plan_doc_id": {"type": "string"},
+    "plan_item_id": {"type": "string"},
+    "target_repo": {"type": "string"},
+    "issue_number": {"type": "integer"},
+    "project_item_id": {"type": "string"},
+    "sync_key": {"type": "string"},
+    "projection_status": {"type": "string", "enum": ["projected", "reconciled", "drifted"]}
+  },
+  "additionalProperties": true
+}

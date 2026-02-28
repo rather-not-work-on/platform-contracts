@@ -1,0 +1,10 @@
+{
+  "trace_id": "trace-001",
+  "span_id": "span-001",
+  "run_id": "run-001",
+  "event_type": "loop.completed",
+  "event_time": "2026-02-28T00:00:00Z",
+  "event_id": "event-001",
+  "sequence_no": 1,
+  "delivery_status": "delivered"
+}

@@ -1,0 +1,8 @@
+{
+  "issue_number": 21,
+  "override_type": "defer_sync",
+  "reason": "Maintenance window",
+  "requested_by": "ops-user",
+  "approved_by": "planningops-dri",
+  "effective_until_utc": "2026-03-01T00:00:00Z"
+}

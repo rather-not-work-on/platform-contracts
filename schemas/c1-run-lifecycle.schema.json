@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "c1-run-lifecycle",
+  "title": "C1 Run Lifecycle",
+  "type": "object",
+  "required": [
+    "run_id",
+    "mission_id",
+    "status",
+    "terminal_outcome",
+    "idempotency_key",
+    "contract_version"
+  ],
+  "properties": {
+    "run_id": {"type": "string"},
+    "mission_id": {"type": "string"},
+    "status": {"type": "string", "enum": ["queued", "running", "blocked", "terminal"]},
+    "terminal_outcome": {"type": "string", "enum": ["succeeded", "failed", "canceled"]},
+    "idempotency_key": {"type": "string"},
+    "contract_version": {"type": "string"}
+  },
+  "additionalProperties": true
+}

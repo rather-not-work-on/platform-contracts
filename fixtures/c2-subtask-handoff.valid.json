@@ -1,0 +1,8 @@
+{
+  "parent_run_id": "run-001",
+  "subtask_id": "subtask-001",
+  "objective": "Create preflight report",
+  "constraints": {"time_limit_sec": 60},
+  "idempotency_key": "subtask-001:v1",
+  "policy_version": "1.0.0"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "c7-manual-override-policy",
+  "title": "C7 Manual Override Policy",
+  "type": "object",
+  "required": [
+    "issue_number",
+    "override_type",
+    "reason",
+    "requested_by",
+    "approved_by",
+    "effective_until_utc"
+  ],
+  "properties": {
+    "issue_number": {"type": "integer"},
+    "override_type": {"type": "string", "enum": ["manual_override", "defer_sync"]},
+    "reason": {"type": "string"},
+    "requested_by": {"type": "string"},
+    "approved_by": {"type": "string"},
+    "effective_until_utc": {"type": "string"}
+  },
+  "additionalProperties": true
+}

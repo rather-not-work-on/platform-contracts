@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "c3-executor-result",
+  "title": "C3 Executor Result",
+  "type": "object",
+  "required": [
+    "run_id",
+    "result_type",
+    "evidence",
+    "metrics"
+  ],
+  "properties": {
+    "run_id": {"type": "string"},
+    "result_type": {"type": "string", "enum": ["complete", "partial", "failed", "canceled"]},
+    "evidence": {
+      "type": "object",
+      "required": ["artifact_ref", "artifact_hash", "verification_method", "evidence_quality"],
+      "properties": {
+        "artifact_ref": {"type": "string"},
+        "artifact_hash": {"type": "string"},
+        "verification_method": {"type": "string"},
+        "evidence_quality": {"type": "string", "enum": ["strong", "weak"]}
+      },
+      "additionalProperties": true
+    },
+    "metrics": {"type": "object"}
+  },
+  "additionalProperties": true
+}

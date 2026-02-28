@@ -1,0 +1,11 @@
+{
+  "run_id": "run-001",
+  "result_type": "complete",
+  "evidence": {
+    "artifact_ref": "artifacts/run-001/report.md",
+    "artifact_hash": "sha256:abc123",
+    "verification_method": "checksum",
+    "evidence_quality": "strong"
+  },
+  "metrics": {"duration_ms": 1200}
+}

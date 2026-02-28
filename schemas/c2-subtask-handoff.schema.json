@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "c2-subtask-handoff",
+  "title": "C2 Subtask Handoff",
+  "type": "object",
+  "required": [
+    "parent_run_id",
+    "subtask_id",
+    "objective",
+    "constraints",
+    "idempotency_key",
+    "policy_version"
+  ],
+  "properties": {
+    "parent_run_id": {"type": "string"},
+    "subtask_id": {"type": "string"},
+    "objective": {"type": "string"},
+    "constraints": {"type": "object"},
+    "idempotency_key": {"type": "string"},
+    "policy_version": {"type": "string"}
+  },
+  "additionalProperties": true
+}

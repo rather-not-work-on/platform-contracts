@@ -1,0 +1,8 @@
+{
+  "run_id": "run-001",
+  "mission_id": "mission-001",
+  "status": "terminal",
+  "terminal_outcome": "succeeded",
+  "idempotency_key": "run-001:v1",
+  "contract_version": "1.0.0"
+}

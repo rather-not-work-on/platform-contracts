@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "c4-provider-invocation",
+  "title": "C4 Provider Invocation",
+  "type": "object",
+  "required": [
+    "provider_id",
+    "model_id",
+    "input_ref",
+    "auth_scope",
+    "allowed_tool_scope",
+    "data_classification"
+  ],
+  "properties": {
+    "provider_id": {"type": "string"},
+    "model_id": {"type": "string"},
+    "input_ref": {"type": "string"},
+    "auth_scope": {"type": "string"},
+    "allowed_tool_scope": {"type": "string"},
+    "data_classification": {"type": "string", "enum": ["public", "internal", "restricted"]}
+  },
+  "additionalProperties": true
+}

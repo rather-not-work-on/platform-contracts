@@ -1,0 +1,8 @@
+{
+  "provider_id": "openai",
+  "model_id": "gpt-5",
+  "input_ref": "inputs/run-001.json",
+  "auth_scope": "issue:write",
+  "allowed_tool_scope": "gh.issue,gh.project",
+  "data_classification": "internal"
+}
