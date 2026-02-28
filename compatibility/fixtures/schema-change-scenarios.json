@@ -1,0 +1,36 @@
+{
+  "scenarios": [
+    {
+      "id": "S1",
+      "description": "optional property addition only",
+      "expected_bump": "minor",
+      "changes": [
+        {"type": "optional_added", "path": "properties.new_hint"}
+      ]
+    },
+    {
+      "id": "S2",
+      "description": "required key removed",
+      "expected_bump": "major",
+      "changes": [
+        {"type": "required_removed", "path": "required.run_id"}
+      ]
+    },
+    {
+      "id": "S3",
+      "description": "enum value added with fallback",
+      "expected_bump": "minor",
+      "changes": [
+        {"type": "enum_value_added_with_fallback", "path": "properties.status.enum"}
+      ]
+    },
+    {
+      "id": "S4",
+      "description": "documentation-only comment update",
+      "expected_bump": "patch",
+      "changes": [
+        {"type": "doc_or_example_only", "path": "description"}
+      ]
+    }
+  ]
+}

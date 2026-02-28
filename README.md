@@ -6,6 +6,7 @@ Shared contract source of truth for UAP multi-repo execution.
 - JSON Schema contracts C1~C8
 - Contract fixture validation
 - Compatibility and versioning policy baseline
+- SemVer impact classification for schema changes
 
 ## Layout
 - `schemas/`: C1~C8 schema files
@@ -16,4 +17,5 @@ Shared contract source of truth for UAP multi-repo execution.
 ## Validation
 ```bash
 python3 scripts/validate_contracts.py --root .
+python3 scripts/classify_schema_change.py --enforce-expected
 ```

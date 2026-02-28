@@ -1,0 +1,30 @@
+name: Contracts Compatibility Check
+
+on:
+  pull_request:
+    paths:
+      - "schemas/**"
+      - "fixtures/**"
+      - "compatibility/**"
+      - "scripts/**"
+      - ".github/workflows/contracts-compatibility-check.yml"
+  workflow_dispatch:
+
+jobs:
+  validate-contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate C1~C8 fixtures
+        run: python3 scripts/validate_contracts.py --root .
+
+      - name: Classify semver impact scenarios
+        run: python3 scripts/classify_schema_change.py --enforce-expected
+
+      - name: Upload compatibility reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: contracts-compatibility-reports
+          path: compatibility/reports/*.json

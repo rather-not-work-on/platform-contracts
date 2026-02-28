@@ -19,6 +19,17 @@
 python3 scripts/validate_contracts.py --root .
 ```
 
+## SemVer Classification Automation
+- policy: `compatibility/semver-policy.md`
+- classifier command:
+
+```bash
+python3 scripts/classify_schema_change.py --enforce-expected
+```
+
+- fixed report path:
+  - `compatibility/reports/semver-classification-<timestamp>.json`
+
 ## Change Checklist
 - [ ] schema diff reviewed
 - [ ] compatibility impact classification assigned (major/minor/patch)
