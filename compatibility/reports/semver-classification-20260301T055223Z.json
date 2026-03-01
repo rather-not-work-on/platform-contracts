@@ -1,0 +1,36 @@
+{
+  "generated_at_utc": "2026-03-01T05:52:23.448667+00:00",
+  "input": "compatibility/fixtures/schema-change-scenarios.json",
+  "scenario_count": 4,
+  "mismatch_count": 0,
+  "results": [
+    {
+      "scenario_id": "S1",
+      "description": "optional property addition only",
+      "expected_bump": "minor",
+      "computed_bump": "minor",
+      "ok": true
+    },
+    {
+      "scenario_id": "S2",
+      "description": "required key removed",
+      "expected_bump": "major",
+      "computed_bump": "major",
+      "ok": true
+    },
+    {
+      "scenario_id": "S3",
+      "description": "enum value added with fallback",
+      "expected_bump": "minor",
+      "computed_bump": "minor",
+      "ok": true
+    },
+    {
+      "scenario_id": "S4",
+      "description": "documentation-only comment update",
+      "expected_bump": "patch",
+      "computed_bump": "patch",
+      "ok": true
+    }
+  ]
+}
