@@ -45,3 +45,5 @@ jobs:
       - name: Enforce SemVer scenario expectations
         run: python3 scripts/classify_schema_change.py --enforce-expected
 
+      - name: Verify SemVer rationale contract
+        run: python3 scripts/test_classify_schema_change_diff.py

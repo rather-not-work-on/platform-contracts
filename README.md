@@ -20,4 +20,5 @@ python3 -m pip install -r requirements-dev.txt
 python3 scripts/validate_contracts.py --root .
 python3 scripts/test_validate_contracts_strict.py
 python3 scripts/classify_schema_change.py --enforce-expected
+python3 scripts/test_classify_schema_change_diff.py
 ```
