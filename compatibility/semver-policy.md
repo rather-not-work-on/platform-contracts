@@ -15,8 +15,10 @@ Applies to C1~C8 schemas in `schemas/`.
 
 ## CI Contract
 Every PR must pass:
-1. `python3 scripts/validate_contracts.py --root .`
-2. `python3 scripts/classify_schema_change.py --enforce-expected`
+1. `python3 -m pip install -r requirements-dev.txt`
+2. `python3 scripts/validate_contracts.py --root .`
+3. `python3 scripts/test_validate_contracts_strict.py`
+4. `python3 scripts/classify_schema_change.py --enforce-expected`
 
 ## Fixed Report Path Contract
 Classification reports are emitted to:

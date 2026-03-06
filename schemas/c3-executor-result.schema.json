@@ -10,20 +10,20 @@
     "metrics"
   ],
   "properties": {
-    "run_id": {"type": "string"},
+    "run_id": {"type": "string", "minLength": 1},
     "result_type": {"type": "string", "enum": ["complete", "partial", "failed", "canceled"]},
     "evidence": {
       "type": "object",
       "required": ["artifact_ref", "artifact_hash", "verification_method", "evidence_quality"],
       "properties": {
-        "artifact_ref": {"type": "string"},
-        "artifact_hash": {"type": "string"},
-        "verification_method": {"type": "string"},
+        "artifact_ref": {"type": "string", "minLength": 1},
+        "artifact_hash": {"type": "string", "minLength": 1},
+        "verification_method": {"type": "string", "minLength": 1},
         "evidence_quality": {"type": "string", "enum": ["strong", "weak"]}
       },
-      "additionalProperties": true
+      "additionalProperties": false
     },
-    "metrics": {"type": "object"}
+    "metrics": {"type": "object", "additionalProperties": true}
   },
-  "additionalProperties": true
+  "additionalProperties": false
 }

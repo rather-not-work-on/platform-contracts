@@ -12,12 +12,12 @@
     "contract_version"
   ],
   "properties": {
-    "run_id": {"type": "string"},
-    "mission_id": {"type": "string"},
+    "run_id": {"type": "string", "minLength": 1},
+    "mission_id": {"type": "string", "minLength": 1},
     "status": {"type": "string", "enum": ["queued", "running", "blocked", "terminal"]},
     "terminal_outcome": {"type": "string", "enum": ["succeeded", "failed", "canceled"]},
-    "idempotency_key": {"type": "string"},
-    "contract_version": {"type": "string"}
+    "idempotency_key": {"type": "string", "minLength": 1},
+    "contract_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"}
   },
-  "additionalProperties": true
+  "additionalProperties": false
 }

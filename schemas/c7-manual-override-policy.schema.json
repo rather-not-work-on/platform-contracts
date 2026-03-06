@@ -12,12 +12,12 @@
     "effective_until_utc"
   ],
   "properties": {
-    "issue_number": {"type": "integer"},
+    "issue_number": {"type": "integer", "minimum": 1},
     "override_type": {"type": "string", "enum": ["manual_override", "defer_sync"]},
-    "reason": {"type": "string"},
-    "requested_by": {"type": "string"},
-    "approved_by": {"type": "string"},
-    "effective_until_utc": {"type": "string"}
+    "reason": {"type": "string", "minLength": 1},
+    "requested_by": {"type": "string", "minLength": 1},
+    "approved_by": {"type": "string", "minLength": 1},
+    "effective_until_utc": {"type": "string", "format": "date-time"}
   },
-  "additionalProperties": true
+  "additionalProperties": false
 }

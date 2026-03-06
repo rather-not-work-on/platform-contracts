@@ -12,12 +12,12 @@
     "policy_version"
   ],
   "properties": {
-    "parent_run_id": {"type": "string"},
-    "subtask_id": {"type": "string"},
-    "objective": {"type": "string"},
-    "constraints": {"type": "object"},
-    "idempotency_key": {"type": "string"},
-    "policy_version": {"type": "string"}
+    "parent_run_id": {"type": "string", "minLength": 1},
+    "subtask_id": {"type": "string", "minLength": 1},
+    "objective": {"type": "string", "minLength": 1},
+    "constraints": {"type": "object", "minProperties": 1, "additionalProperties": true},
+    "idempotency_key": {"type": "string", "minLength": 1},
+    "policy_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"}
   },
-  "additionalProperties": true
+  "additionalProperties": false
 }
