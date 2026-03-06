@@ -30,10 +30,16 @@ python3 scripts/test_validate_contracts_strict.py
 
 ```bash
 python3 scripts/classify_schema_change.py --enforce-expected
+python3 scripts/test_classify_schema_change_diff.py
 ```
 
 - fixed report path:
   - `compatibility/reports/semver-classification-<timestamp>.json`
+- optional release diff mode:
+
+```bash
+python3 scripts/classify_schema_change.py --before-dir <prev_schemas_dir> --after-dir schemas
+```
 
 ## Change Checklist
 - [ ] schema diff reviewed

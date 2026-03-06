@@ -4,33 +4,106 @@
       "id": "S1",
       "description": "optional property addition only",
       "expected_bump": "minor",
-      "changes": [
-        {"type": "optional_added", "path": "properties.new_hint"}
-      ]
+      "before_schema": {
+        "type": "object",
+        "required": ["status"],
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "after_schema": {
+        "type": "object",
+        "required": ["status"],
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "new_hint": {
+            "type": "string"
+          }
+        }
+      }
     },
     {
       "id": "S2",
       "description": "required key removed",
       "expected_bump": "major",
-      "changes": [
-        {"type": "required_removed", "path": "required.run_id"}
-      ]
+      "before_schema": {
+        "type": "object",
+        "required": ["run_id", "status"],
+        "properties": {
+          "run_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "after_schema": {
+        "type": "object",
+        "required": ["status"],
+        "properties": {
+          "run_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      }
     },
     {
       "id": "S3",
       "description": "enum value added with fallback",
       "expected_bump": "minor",
-      "changes": [
-        {"type": "enum_value_added_with_fallback", "path": "properties.status.enum"}
-      ]
+      "before_schema": {
+        "type": "object",
+        "required": ["status"],
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": ["todo", "in_progress", "done"]
+          }
+        }
+      },
+      "after_schema": {
+        "type": "object",
+        "required": ["status"],
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": ["todo", "in_progress", "done", "blocked"]
+          }
+        }
+      }
     },
     {
       "id": "S4",
       "description": "documentation-only comment update",
       "expected_bump": "patch",
-      "changes": [
-        {"type": "doc_or_example_only", "path": "description"}
-      ]
+      "before_schema": {
+        "type": "object",
+        "description": "Execution result",
+        "properties": {
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "after_schema": {
+        "type": "object",
+        "description": "Execution result for external clients",
+        "properties": {
+          "status": {
+            "type": "string"
+          }
+        }
+      }
     }
   ]
 }

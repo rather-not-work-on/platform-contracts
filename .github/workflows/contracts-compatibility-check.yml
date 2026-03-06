@@ -32,6 +32,9 @@ jobs:
       - name: Classify semver impact scenarios
         run: python3 scripts/classify_schema_change.py --enforce-expected
 
+      - name: Verify semver rationale contract
+        run: python3 scripts/test_classify_schema_change_diff.py
+
       - name: Upload compatibility reports
         uses: actions/upload-artifact@v4
         with:
