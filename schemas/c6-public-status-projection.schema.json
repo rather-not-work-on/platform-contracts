@@ -10,11 +10,11 @@
     "projected_at_utc"
   ],
   "properties": {
-    "run_id": {"type": "string"},
-    "project_item_id": {"type": "string"},
+    "run_id": {"type": "string", "minLength": 1},
+    "project_item_id": {"type": "string", "minLength": 1},
     "public_state": {"type": "string", "enum": ["running", "terminal"]},
     "terminal_reason": {"type": "string", "enum": ["succeeded", "failed", "canceled", "inconclusive"]},
-    "projected_at_utc": {"type": "string"}
+    "projected_at_utc": {"type": "string", "format": "date-time"}
   },
-  "additionalProperties": true
+  "additionalProperties": false
 }

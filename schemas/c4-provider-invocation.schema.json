@@ -12,12 +12,12 @@
     "data_classification"
   ],
   "properties": {
-    "provider_id": {"type": "string"},
-    "model_id": {"type": "string"},
-    "input_ref": {"type": "string"},
-    "auth_scope": {"type": "string"},
-    "allowed_tool_scope": {"type": "string"},
+    "provider_id": {"type": "string", "minLength": 1},
+    "model_id": {"type": "string", "minLength": 1},
+    "input_ref": {"type": "string", "minLength": 1},
+    "auth_scope": {"type": "string", "minLength": 1},
+    "allowed_tool_scope": {"type": "string", "minLength": 1},
     "data_classification": {"type": "string", "enum": ["public", "internal", "restricted"]}
   },
-  "additionalProperties": true
+  "additionalProperties": false
 }

@@ -16,6 +16,8 @@ Shared contract source of truth for UAP multi-repo execution.
 
 ## Validation
 ```bash
+python3 -m pip install -r requirements-dev.txt
 python3 scripts/validate_contracts.py --root .
+python3 scripts/test_validate_contracts_strict.py
 python3 scripts/classify_schema_change.py --enforce-expected
 ```

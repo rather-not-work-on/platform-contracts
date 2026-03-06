@@ -1,18 +1,28 @@
-name: Contracts Compatibility Check
+name: Contracts Check
 
 on:
   pull_request:
     paths:
       - "schemas/**"
       - "fixtures/**"
-      - "compatibility/**"
       - "scripts/**"
+      - "compatibility/**"
       - "requirements-dev.txt"
-      - ".github/workflows/contracts-compatibility-check.yml"
+      - ".github/workflows/contracts-check.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "schemas/**"
+      - "fixtures/**"
+      - "scripts/**"
+      - "compatibility/**"
+      - "requirements-dev.txt"
+      - ".github/workflows/contracts-check.yml"
   workflow_dispatch:
 
 jobs:
-  validate-contracts:
+  contracts:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,14 +36,12 @@ jobs:
       - name: Install dependencies
         run: python3 -m pip install --upgrade pip && python3 -m pip install -r requirements-dev.txt
 
-      - name: Validate C1~C8 fixtures
+      - name: Validate C1~C8 fixtures with JSON Schema
         run: python3 scripts/validate_contracts.py --root .
 
-      - name: Classify semver impact scenarios
+      - name: Run strict regression fixtures
+        run: python3 scripts/test_validate_contracts_strict.py
+
+      - name: Enforce SemVer scenario expectations
         run: python3 scripts/classify_schema_change.py --enforce-expected
 
-      - name: Upload compatibility reports
-        uses: actions/upload-artifact@v4
-        with:
-          name: contracts-compatibility-reports
-          path: compatibility/reports/*.json

@@ -16,8 +16,13 @@
 - validation command:
 
 ```bash
+python3 -m pip install -r requirements-dev.txt
 python3 scripts/validate_contracts.py --root .
+python3 scripts/test_validate_contracts_strict.py
 ```
+
+- strictness policy:
+  - `compatibility/schema-strictness-policy.md`
 
 ## SemVer Classification Automation
 - policy: `compatibility/semver-policy.md`

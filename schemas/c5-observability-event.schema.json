@@ -14,17 +14,17 @@
     "delivery_status"
   ],
   "properties": {
-    "trace_id": {"type": "string"},
-    "span_id": {"type": "string"},
-    "run_id": {"type": "string"},
-    "event_type": {"type": "string"},
-    "event_time": {"type": "string"},
-    "event_id": {"type": "string"},
-    "sequence_no": {"type": "integer"},
+    "trace_id": {"type": "string", "minLength": 1},
+    "span_id": {"type": "string", "minLength": 1},
+    "run_id": {"type": "string", "minLength": 1},
+    "event_type": {"type": "string", "minLength": 1},
+    "event_time": {"type": "string", "format": "date-time"},
+    "event_id": {"type": "string", "minLength": 1},
+    "sequence_no": {"type": "integer", "minimum": 0},
     "delivery_status": {
       "type": "string",
       "enum": ["pending", "delivered", "retriable_failed", "terminal_failed"]
     }
   },
-  "additionalProperties": true
+  "additionalProperties": false
 }
