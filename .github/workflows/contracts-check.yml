@@ -2,23 +2,9 @@ name: Contracts Check
 
 on:
   pull_request:
-    paths:
-      - "schemas/**"
-      - "fixtures/**"
-      - "scripts/**"
-      - "compatibility/**"
-      - "requirements-dev.txt"
-      - ".github/workflows/contracts-check.yml"
   push:
     branches:
       - main
-    paths:
-      - "schemas/**"
-      - "fixtures/**"
-      - "scripts/**"
-      - "compatibility/**"
-      - "requirements-dev.txt"
-      - ".github/workflows/contracts-check.yml"
   workflow_dispatch:
 
 jobs:
