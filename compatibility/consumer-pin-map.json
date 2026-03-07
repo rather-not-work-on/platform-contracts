@@ -1,0 +1,17 @@
+{
+  "source_repo": "rather-not-work-on/platform-contracts",
+  "consumers": [
+    {
+      "consumer_repo": "rather-not-work-on/platform-provider-gateway",
+      "pin_path": "platform-provider-gateway/config/contract-pin.json"
+    },
+    {
+      "consumer_repo": "rather-not-work-on/platform-observability-gateway",
+      "pin_path": "platform-observability-gateway/config/contract-pin.json"
+    },
+    {
+      "consumer_repo": "rather-not-work-on/monday",
+      "pin_path": "monday/contracts/contract-pin.json"
+    }
+  ]
+}

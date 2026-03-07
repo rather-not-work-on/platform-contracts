@@ -1,0 +1,29 @@
+{
+  "generated_at_utc": "2026-03-07T00:00:00Z",
+  "source_repo": "rather-not-work-on/platform-contracts",
+  "bundle_version": "2026.03.07",
+  "consumer_count": 2,
+  "consumer_results": [
+    {
+      "consumer_repo": "rather-not-work-on/platform-provider-gateway",
+      "pin_path": "platform-provider-gateway/config/contract-pin.json",
+      "contract_bundle_version": "2026.03.07",
+      "pinned_contracts": [
+        "c4-provider-invocation"
+      ],
+      "verdict": "pass",
+      "errors": []
+    },
+    {
+      "consumer_repo": "rather-not-work-on/monday",
+      "pin_path": "monday/contracts/contract-pin.json",
+      "contract_bundle_version": "2026.03.07",
+      "pinned_contracts": [
+        "c1-run-lifecycle",
+        "c2-subtask-handoff"
+      ],
+      "verdict": "pass",
+      "errors": []
+    }
+  ]
+}
