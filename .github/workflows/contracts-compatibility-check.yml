@@ -35,6 +35,9 @@ jobs:
       - name: Verify semver rationale contract
         run: python3 scripts/test_classify_schema_change_diff.py
 
+      - name: Verify contract bundle publication regression
+        run: python3 scripts/test_publish_contract_bundle.py
+
       - name: Upload compatibility reports
         uses: actions/upload-artifact@v4
         with:

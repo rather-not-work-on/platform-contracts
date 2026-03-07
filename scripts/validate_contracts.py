@@ -84,7 +84,7 @@ def validate_pair(schema_path: Path, sample_path: Path):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Validate C1~C8 contract fixtures with JSON Schema Draft 2020-12")
+    parser = argparse.ArgumentParser(description="Validate contract schema fixtures with JSON Schema Draft 2020-12")
     parser.add_argument("--root", default=".", help="workspace root containing schemas/ and fixtures/")
     parser.add_argument(
         "--report",
@@ -174,7 +174,7 @@ def main():
 
     if failures > 0:
         return 1
-    print("validation passed: all C1~C8 fixtures satisfy JSON Schema validation")
+    print("validation passed: all contract fixtures satisfy JSON Schema validation")
     return 0
 
 

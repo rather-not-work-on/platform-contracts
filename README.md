@@ -4,6 +4,7 @@ Shared contract source of truth for UAP multi-repo execution.
 
 ## Scope
 - JSON Schema contracts C1~C8
+- Contract bundle publication and consumer pin evidence
 - Contract fixture validation
 - Compatibility and versioning policy baseline
 - SemVer impact classification for schema changes
@@ -21,4 +22,13 @@ python3 scripts/validate_contracts.py --root .
 python3 scripts/test_validate_contracts_strict.py
 python3 scripts/classify_schema_change.py --enforce-expected
 python3 scripts/test_classify_schema_change_diff.py
+python3 scripts/test_publish_contract_bundle.py
 ```
+
+## Publication
+```bash
+python3 scripts/publish_contract_bundle.py --bundle-version 2026.03.07 --workspace-root .. --strict
+```
+
+Runbook:
+- `compatibility/contract-bundle-publication-runbook.md`
