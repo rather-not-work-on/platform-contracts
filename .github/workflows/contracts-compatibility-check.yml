@@ -3,6 +3,12 @@ name: Contracts Compatibility Check
 on:
   pull_request:
     paths:
+      - "README.md"
+      - "docs/**"
+      - "schemas/README.md"
+      - "fixtures/README.md"
+      - "scripts/README.md"
+      - "compatibility/README.md"
       - "schemas/**"
       - "fixtures/**"
       - "compatibility/**"
@@ -28,6 +34,9 @@ jobs:
 
       - name: Validate C1~C8 fixtures
         run: python3 scripts/validate_contracts.py --root .
+
+      - name: Verify topology README contract
+        run: bash scripts/test_module_readmes.sh
 
       - name: Classify semver impact scenarios
         run: python3 scripts/classify_schema_change.py --enforce-expected

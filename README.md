@@ -14,6 +14,14 @@ Shared contract source of truth for UAP multi-repo execution.
 - `fixtures/`: valid fixture samples for each contract
 - `scripts/`: local contract validation scripts
 - `compatibility/`: version policy and compatibility report
+- `docs/`: topology and extension guidance
+
+Topology guide:
+- `docs/repo-topology.md`
+- `schemas/README.md`
+- `fixtures/README.md`
+- `scripts/README.md`
+- `compatibility/README.md`
 
 ## Validation
 ```bash
@@ -23,6 +31,7 @@ python3 scripts/test_validate_contracts_strict.py
 python3 scripts/classify_schema_change.py --enforce-expected
 python3 scripts/test_classify_schema_change_diff.py
 python3 scripts/test_publish_contract_bundle.py
+bash scripts/test_module_readmes.sh
 ```
 
 ## Publication
@@ -32,3 +41,5 @@ python3 scripts/publish_contract_bundle.py --bundle-version 2026.03.07 --workspa
 
 Runbook:
 - `compatibility/contract-bundle-publication-runbook.md`
+
+Generated validation reports land under `compatibility/reports/` and are gitignored.

@@ -1,3 +1,4 @@
 ._*
 **/._*
 __pycache__/
+compatibility/reports/*.json
