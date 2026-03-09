@@ -42,4 +42,10 @@ python3 scripts/publish_contract_bundle.py --bundle-version 2026.03.07 --workspa
 Runbook:
 - `compatibility/contract-bundle-publication-runbook.md`
 
+## PR Hygiene
+- template: `.github/pull_request_template.md`
+- review gate: `.github/workflows/pr-review-gate.yml`
+- external repo PRs must include a repo-qualified planningops issue ref
+- example: `Closes rather-not-work-on/platform-planningops#210`
+
 Generated validation reports land under `compatibility/reports/` and are gitignored.
