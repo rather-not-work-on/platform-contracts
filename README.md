@@ -44,6 +44,7 @@ python3 scripts/publish_contract_bundle.py --bundle-version 2026.03.07 --workspa
 ```
 
 Runbook:
+- `compatibility/publish-and-pin-runbook.md`
 - `compatibility/contract-bundle-publication-runbook.md`
 
 ## PR Hygiene
