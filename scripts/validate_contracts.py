@@ -6,16 +6,9 @@ from pathlib import Path
 import sys
 from typing import Dict, List, Tuple
 
-try:
-    from jsonschema import Draft202012Validator, FormatChecker
-    from jsonschema.exceptions import SchemaError
-except ImportError:
-    print(
-        "[ERR] missing dependency: jsonschema\n"
-        "      install with: python3 -m pip install -r requirements-dev.txt",
-        file=sys.stderr,
-    )
-    sys.exit(2)
+from jsonschema_compat import load_validator_exports
+
+Draft202012Validator, FormatChecker, SchemaError = load_validator_exports()
 
 REQUIRED_FORMAT_CHECKERS = {"date-time"}
 
