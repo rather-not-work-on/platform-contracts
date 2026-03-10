@@ -1,5 +1,8 @@
 # Contract Bundle Publication Runbook
 
+Canonical reference has moved to `compatibility/publish-and-pin-runbook.md`.
+This file is kept as a compatibility alias.
+
 ## Goal
 Publish deterministic contract bundle evidence and verify that consumer repositories pin the same bundle version before federation checks run.
 

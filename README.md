@@ -25,7 +25,8 @@ Topology guide:
 
 ## Validation
 ```bash
-python3 -m pip install -r requirements-dev.txt
+# Optional (preferred when network is available):
+# python3 -m pip install -r requirements-dev.txt
 python3 scripts/validate_contracts.py --root .
 python3 scripts/test_validate_contracts_strict.py
 python3 scripts/classify_schema_change.py --enforce-expected
@@ -34,12 +35,16 @@ python3 scripts/test_publish_contract_bundle.py
 bash scripts/test_module_readmes.sh
 ```
 
+Validation scripts use `jsonschema` when installed and fall back to a local
+Draft 2020-12 compatibility validator for offline environments.
+
 ## Publication
 ```bash
 python3 scripts/publish_contract_bundle.py --bundle-version 2026.03.07 --workspace-root .. --strict
 ```
 
 Runbook:
+- `compatibility/publish-and-pin-runbook.md`
 - `compatibility/contract-bundle-publication-runbook.md`
 
 ## PR Hygiene

@@ -5,7 +5,9 @@ import subprocess
 import tempfile
 from pathlib import Path
 
-from jsonschema import Draft202012Validator, FormatChecker
+from jsonschema_compat import load_validator_exports
+
+Draft202012Validator, FormatChecker, _ = load_validator_exports()
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]

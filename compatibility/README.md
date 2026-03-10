@@ -6,7 +6,7 @@ Store stable human-readable policy and runbooks for versioning and bundle public
 ## Contents
 - SemVer policy
 - schema strictness policy
-- publication runbook
+- publish-and-pin runbook
 - consumer pin map
 
 ## Rules
