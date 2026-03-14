@@ -1,0 +1,14 @@
+{
+  "transition_id": "wave5-lease-0001",
+  "queue_item_id": "queue-wave5-001",
+  "goal_key": "uap-goal-driven-autonomy-wave5",
+  "schedule_key": "wave5-local-runtime",
+  "lease_owner": "monday-local-worker-1",
+  "lease_token": "lease-wave5-001",
+  "state_from": "ready",
+  "state_to": "queueing",
+  "transition_reason": "scheduler.dequeue",
+  "occurred_at_utc": "2026-03-14T08:00:00Z",
+  "attempt_count": 1,
+  "retry_budget_remaining": 2
+}
