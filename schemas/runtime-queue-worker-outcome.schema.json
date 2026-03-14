@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "runtime-queue-worker-outcome",
+  "title": "Runtime Queue Worker Outcome",
+  "type": "object",
+  "required": [
+    "transition_id",
+    "queue_item_id",
+    "goal_key",
+    "schedule_key",
+    "lease_owner",
+    "worker_run_id",
+    "state_from",
+    "state_to",
+    "transition_reason",
+    "occurred_at_utc",
+    "attempt_count",
+    "retry_budget_remaining"
+  ],
+  "properties": {
+    "transition_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "queue_item_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "goal_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schedule_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lease_owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "worker_run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "state_from": {
+      "type": "string",
+      "enum": [
+        "leased",
+        "running"
+      ]
+    },
+    "state_to": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "retry_wait",
+        "dead_letter"
+      ]
+    },
+    "transition_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "occurred_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "attempt_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "retry_budget_remaining": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "completion_evidence_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "retry_after_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dead_letter_reason": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false
+}

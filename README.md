@@ -6,6 +6,7 @@ Shared contract source of truth for UAP multi-repo execution.
 - JSON Schema contracts C1~C8
 - Shared scheduler/queue schema baseline
 - Shared scheduler lease lifecycle schema baseline
+- Shared queue worker outcome schema baseline
 - Contract bundle publication and consumer pin evidence
 - Contract fixture validation
 - Compatibility and versioning policy baseline

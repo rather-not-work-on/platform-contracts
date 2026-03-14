@@ -7,6 +7,7 @@ Own the canonical JSON Schema definitions consumed across the federation.
 - `c1` through `c8` schema files
 - `runtime-scheduler-queue-item.schema.json`
 - `runtime-scheduler-lease-lifecycle.schema.json`
+- `runtime-queue-worker-outcome.schema.json`
 - publication/pin evidence schemas
 
 ## Rules
