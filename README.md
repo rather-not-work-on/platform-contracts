@@ -4,13 +4,14 @@ Shared contract source of truth for UAP multi-repo execution.
 
 ## Scope
 - JSON Schema contracts C1~C8
+- Shared scheduler/queue schema baseline
 - Contract bundle publication and consumer pin evidence
 - Contract fixture validation
 - Compatibility and versioning policy baseline
 - SemVer impact classification for schema changes
 
 ## Layout
-- `schemas/`: C1~C8 schema files
+- `schemas/`: C1~C8 plus shared runtime schema files
 - `fixtures/`: valid fixture samples for each contract
 - `scripts/`: local contract validation scripts
 - `compatibility/`: version policy and compatibility report
