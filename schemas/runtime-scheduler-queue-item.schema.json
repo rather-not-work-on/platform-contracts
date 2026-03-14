@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "runtime-scheduler-queue-item",
+  "title": "Runtime Scheduler Queue Item",
+  "type": "object",
+  "required": [
+    "queue_item_id",
+    "goal_key",
+    "schedule_key",
+    "state",
+    "idempotency_key",
+    "priority_class",
+    "retry_budget",
+    "retry_budget_remaining",
+    "attempt_count",
+    "dependency_keys",
+    "escalation_policy_ref",
+    "completion_policy_ref"
+  ],
+  "properties": {
+    "queue_item_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "goal_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schedule_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "ready",
+        "leased",
+        "running",
+        "blocked",
+        "retry_wait",
+        "dead_letter",
+        "completed"
+      ]
+    },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "priority_class": {
+      "type": "string",
+      "minLength": 1
+    },
+    "retry_budget": {
+      "type": "object",
+      "required": [
+        "max_attempts"
+      ],
+      "properties": {
+        "max_attempts": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "backoff_profile": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "retry_budget_remaining": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "attempt_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "dependency_keys": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "escalation_policy_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "completion_policy_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_repo": {
+      "type": "string",
+      "pattern": "^[^/]+/[^/]+$"
+    },
+    "work_payload_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lease_owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lease_expires_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "blocked_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dead_letter_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "completion_evidence_ref": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false
+}

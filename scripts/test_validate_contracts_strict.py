@@ -30,6 +30,11 @@ CASES = [
         "fixture": "c8-plan-to-github-projection.bad-target-repo.invalid.json",
         "expected_validator": "pattern",
     },
+    {
+        "schema": "runtime-scheduler-queue-item.schema.json",
+        "fixture": "runtime-scheduler-queue-item.bad-state.invalid.json",
+        "expected_validator": "enum",
+    },
 ]
 
 
