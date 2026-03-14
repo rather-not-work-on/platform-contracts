@@ -40,6 +40,11 @@ CASES = [
         "fixture": "runtime-scheduler-lease-lifecycle.bad-state.invalid.json",
         "expected_validator": "enum",
     },
+    {
+        "schema": "runtime-queue-worker-outcome.schema.json",
+        "fixture": "runtime-queue-worker-outcome.bad-state.invalid.json",
+        "expected_validator": "enum",
+    },
 ]
 
 
