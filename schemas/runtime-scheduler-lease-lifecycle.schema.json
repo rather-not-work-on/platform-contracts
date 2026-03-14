@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "runtime-scheduler-lease-lifecycle",
+  "title": "Runtime Scheduler Lease Lifecycle",
+  "type": "object",
+  "required": [
+    "transition_id",
+    "queue_item_id",
+    "goal_key",
+    "schedule_key",
+    "lease_owner",
+    "lease_token",
+    "state_from",
+    "state_to",
+    "transition_reason",
+    "occurred_at_utc",
+    "attempt_count",
+    "retry_budget_remaining"
+  ],
+  "properties": {
+    "transition_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "queue_item_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "goal_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schedule_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lease_owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lease_token": {
+      "type": "string",
+      "minLength": 1
+    },
+    "state_from": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "ready",
+        "leased",
+        "running",
+        "blocked",
+        "retry_wait",
+        "dead_letter",
+        "completed"
+      ]
+    },
+    "state_to": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "ready",
+        "leased",
+        "running",
+        "blocked",
+        "retry_wait",
+        "dead_letter",
+        "completed"
+      ]
+    },
+    "transition_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "occurred_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lease_expires_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "heartbeat_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "attempt_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "retry_budget_remaining": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "worker_run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "completion_evidence_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dead_letter_reason": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false
+}
